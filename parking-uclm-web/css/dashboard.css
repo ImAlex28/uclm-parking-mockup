@@ -1,0 +1,234 @@
+/* Variables de color para modo claro y oscuro */
+        :root {
+            --bg-color: #E5E5E5;
+            --text-color: #333;
+            --card-bg-color: #FFFFFF;
+            --header-bg-color: #B30033;
+            --button-bg-color: #F0F0F0;
+            --button-hover-color: #E0E0E0;
+            --calendar-selected: #B30033;
+            --calendar-out-of-month:#9b9b9b;
+            --btn-primary-bg: #007BFF;
+            --btn-danger-bg: #DC3545;
+        }
+
+        /* Modo oscuro */
+        [data-theme="dark"] {
+            --bg-color: #121212;
+            --text-color: #FFFFFF;
+            --card-bg-color: #1E1E1E;
+            --header-bg-color: #B30033;
+            --button-bg-color: #2C2C2C;
+            --button-hover-color: #444444;
+            --calendar-selected: #B30033;
+            --calendar-out-of-month:#696969;
+            --btn-primary-bg: #007BFF;
+            --btn-danger-bg: #DC3545;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: var(--bg-color);
+            color: var(--text-color);
+        }
+
+        header {
+            background-color: var(--header-bg-color);
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 20px;
+        }
+
+        header .icons {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        header .icons img {
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+        }
+
+        header .logo {
+            display: flex;
+            align-items: center;
+            margin-right: auto;
+        }
+
+        main {
+            display: grid;
+            grid-template-columns: 300px 1fr 300px;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .calendar-container, .reservation-list, .user-info {
+            background: var(--card-bg-color);
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .calendar-container h2,
+        .reservation-list h2,
+        .user-info h2 {
+            font-size: 18px;
+            margin-top: 0;
+        }
+
+        /* Calendario */
+        .calendar-container .calendar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .calendar-container table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .calendar-container th, .calendar-container td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            cursor: pointer;
+        }
+
+        .calendar-container td.selected {
+            background-color: var(--calendar-selected);
+            color: white;
+            font-weight: bold;
+        }
+
+        .calendar-container td.out-of-month {
+            background-color: var(--calendar-out-of-month);
+            color: white;
+            font-weight: bold;
+        }
+
+        .calendar-container .calendar-footer {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .calendar-container button {
+            padding: 10px 20px;
+            background-color: var(--header-bg-color);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        /* Reservas */
+        .reservation-list .reservation-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            padding: 10px 15px;
+            background: var(--button-bg-color);
+            border-radius: 5px;
+        }
+
+        .reservation-list button {
+            padding: 5px 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            color: white;
+        }
+
+        .reservation-list .btn-gestionar {
+            background-color: var(--btn-primary-bg);
+            margin-right: 5px;
+        }
+
+        .reservation-list .btn-cancelar {
+            background-color: var(--btn-danger-bg);
+        }
+
+        /* Usuario */
+        .user-info {
+            text-align: center;
+        }
+
+        .user-info button {
+            width: 100%;
+            margin: 10px 0;
+            padding: 10px;
+            background: var(--button-bg-color);
+            color: var(--text-color);
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .user-info button:hover {
+            background: var(--button-hover-color);
+        }
+
+        .user-info .plan-info {
+            margin-top: 10px;
+            font-size: 14px;
+            color: var(--text-color);
+        }
+
+        /* Adaptación para pantallas pequeñas */
+        @media (max-width: 768px) {
+            main {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .calendar-container, .reservation-list, .user-info {
+                width: 100%;
+            }
+
+            .reservation-list .reservation-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+
+            .reservation-list .reservation-item strong,
+            .reservation-list .reservation-item span {
+                width: 100%;
+            }
+
+            .reservation-list button {
+                width: 100%;
+            }
+
+            .calendar-container table {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 16px;
+            }
+
+            .reservation-list h2,
+            .calendar-container h2,
+            .user-info h2 {
+                font-size: 16px;
+            }
+        }

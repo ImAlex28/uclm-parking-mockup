@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Reservas</title>
+    <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body>
+    <!-- Cabecera -->
+    <header>
+        <div>
+            <!--img src="" alt="Idioma"-->
+            <h1 style="display: inline-flex; align-items: center;"><img src="../assets/image_uclm.png" alt="Modo oscuro" style="cursor: pointer; margin-right: 15px;">Aparcamiento</h1>
+        </div>
+        <div class="icons">
+            <!--img src="" alt="Idioma"-->
+            <img src="../assets/dark_mode.png" alt="Modo oscuro" id="darkModeToggle" style="cursor: pointer;">
+        </div>
+    </header>
+
+    <!-- Contenido principal -->
+    <main>
+        <!-- Calendario -->
+        <div class="calendar-container">
+            <h2>Mis reservas</h2>
+            <div class="calendar-header">
+                <span>Junio 2024</span>
+                <button>Cambiar mes</button>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>L</th><th>M</th><th>X</th><th>J</th><th>V</th><th>S</th><th>D</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="out-of-month">29</td><td class="out-of-month">30</td><td class="out-of-month">31</td><td>1</td><td>2</td><td>3</td><td>4</td>
+                    </tr>
+                    <tr>
+                        <td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td>
+                    </tr>
+                    <tr>
+                        <td>12</td><td>13</td><td>14</td><td class="selected">15</td><td>16</td><td>17</td><td>18</td>
+                    </tr>
+                    <tr>
+                        <td>19</td><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td><td>25</td>
+                    </tr>
+                    <tr>
+                        <td>26</td><td>27</td><td>28</td><td>29</td><td>30</td><td class="out-of-month">1</td><td class="out-of-month">2</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="calendar-footer">
+                <button>OK</button>
+            </div>
+        </div>
+
+        <!-- Reservas -->
+        <div class="reservation-list">
+            <h2>Reservas para el Miércoles 15 de Junio de 2024</h2>
+            <div class="reservation-item">
+                <strong>11:00h - 14:30h</strong>
+                <span>E. Polivalente - Nº17</span>
+                <button class="btn-gestionar">Gestionar</button>
+                <button class="btn-cancelar">Cancelar</button>
+            </div>
+            <div class="reservation-item">
+                <strong>16:00h - 17:30h</strong>
+                <span>P. Polideportivo - Nº20</span>
+                <button class="btn-gestionar">Gestionar</button>
+                <button class="btn-cancelar">Cancelar</button>
+            </div>
+            <div class="reservation-item">
+                <strong>19:30h - 21:00h</strong>
+                <span>P. Polideportivo - Nº27</span>
+                <button class="btn-gestionar">Gestionar</button>
+                <button class="btn-cancelar">Cancelar</button>
+            </div>
+        </div>
+
+        <!-- Información del usuario -->
+        <div class="user-info">
+            <h2>NOMBRE APELLIDOS</h2>
+            <div class="plan-info">Mi plan actual: <strong>ESENCIAL</strong></div>
+            <button>MIS VEHÍCULOS</button>
+            <button>HACER RESERVA</button>
+            <button>MIS PLANES</button>
+            <button>ASISTENTE</button>
+            <div class="plan-info">¡También puedes decir <strong>OK, UCLM...</strong> para acceder al asistente!</div>
+        </div>
+    </main>
+
+    <script>
+        // Lógica para alternar el modo oscuro
+        const darkModeToggle = document.getElementById("darkModeToggle");
+
+        darkModeToggle.addEventListener("click", () => {
+            // Alternar el tema
+            if (document.body.getAttribute("data-theme") === "dark") {
+                document.body.removeAttribute("data-theme");
+            } else {
+                document.body.setAttribute("data-theme", "dark");
+            }
+        });
+    </script>
+</body>
+</html>
