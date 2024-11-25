@@ -190,11 +190,12 @@
         }
 
         /* Adaptación para pantallas pequeñas */
-        @media (max-width: 768px) {
+        @media (max-width: 1040px) {
             main {
                 display: flex;
                 flex-direction: column;
                 gap: 20px;
+                margin-right: 45px; /* Asegura el mismo margen derecho */
             }
 
             .calendar-container, .reservation-list, .user-info {
