@@ -5,7 +5,7 @@ body {
     padding: 0;
 }
 .header {
-    background-color: #a50034;
+    background-color: #b30033;
     color: white;
     padding: 10px;
     text-align: left;
@@ -44,7 +44,7 @@ body {
     justify-content: space-between;
 }
 .plan h2 {
-    background-color: #a50034;
+    background-color: #b30033;
     color: white;
     margin: -20px -20px 20px -20px;
     padding: 20px;
@@ -67,7 +67,7 @@ body {
     margin-right: 10px;
 }
 .plan button {
-    background-color: #a50034;
+    background-color: #b30033;
     border: none;
     color: white;
     padding: 10px 20px;
@@ -90,18 +90,18 @@ body.dark-mode {
     color: white;
 }
 body.dark-mode .header {
-    background-color: #333;
+    background-color: #b30033;
 }
 body.dark-mode .plan {
     background-color: #1e1e1e;
     color: white;
 }
 body.dark-mode .plan h2 {
-    background-color: #333;
+    background-color: #b30033;
 }
 body.dark-mode .plan .feature {
     background-color: #2e2e2e;
 }
 body.dark-mode .plan button {
-    background-color: #333;
+    background-color: #b30033;
 }
