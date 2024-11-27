@@ -3,26 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login UCLM</title>
-    <link rel="stylesheet" href="css/login.css">
+    <title>Aparcamiento 1.0</title>
+    <link rel="stylesheet" href="/css/index.css">
 </head>
 <body>
-    <div class="login-container">
-        <div align="left">
-            <img src="assets/texto_uclm.png" alt="Universidad de Castilla - La Mancha" width="70%">
+    <div class="header">
+        <img src="assets/image_uclm.png" alt="UCLM Logo">
+        <h1>Aparcamiento 1.0</h1>
+    </div>
+    <div class="container">
+        <div class="login-box">
+            <h2><span>&#128100;</span> Usuarios</h2>
+            <button onclick="location.href='/pages/login.html'">Acceso a la Universidad</button>
         </div>
-        <!--h1>Universidad de Castilla-La Mancha</h1-->
-        <form action="pages/dashboard.html">
-            <div class="form-group">
-                <label for="email">Correo electrónico</label>
-                <input type="email" id="email" placeholder="nombre.apellido@alu.uclm.es" required>
-            </div>
-            <div class="form-group">
-                <label for="password">Contraseña</label>
-                <input type="password" id="password" placeholder="**********" required>
-            </div>
-            <button class="login-button" type="submit">Siguiente</button>
-        </form>
     </div>
 </body>
 </html>
