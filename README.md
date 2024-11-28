@@ -26,12 +26,15 @@ The project consists of the following key files:
 
 ## Purpose
 
-This project serves as a demonstration of design principles for **Human-Computer Interaction (HCI)**. It is not intended for deployment or real-world usage but rather to showcase the visual design aspect of a website.
+This project serves as a demonstration of design principles for **Human-Computer Interaction (HCI)**. It is not intended for real-world usage but rather to showcase the visual design aspect of a website.
 
 ## Installation
 
 There is no backend or functional code to install. To view the website:
 
+Option 1: Visit the deployed site: https://aparcamientouclm.netlify.app/
+
+Option 2:
 1. Clone or download this repository.
 2. Open the `index.html` file in a web browser.
 
