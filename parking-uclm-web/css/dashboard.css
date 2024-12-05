@@ -220,6 +220,8 @@
             .calendar-container table {
                 font-size: 14px;
             }
+            background: linear-gradient(90deg, #ff7f50, #ff4500);
+
         }
 
         @media (max-width: 480px) {

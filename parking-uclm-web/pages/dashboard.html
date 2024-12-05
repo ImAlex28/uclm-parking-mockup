@@ -93,6 +93,57 @@
         </div>
     </main>
 
+    <!-- Aviso de privacidad -->
+<div id="privacy-alert" style="
+    display: none;
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(90deg, #ff7f50, #ff4500);
+    color: white;
+    border: 2px solid #ff6347;
+    padding: 15px 20px;
+    border-radius: 10px;
+    z-index: 100;
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+    font-family: Arial, sans-serif;
+    font-size: 14px;">
+    <strong>¡Atención!</strong> Este sitio necesita acceso al micrófono para usar el comando de voz. Por favor, permite el acceso al micrófono.
+    <button onclick="document.getElementById('privacy-alert').style.display = 'none';" style="
+        margin-left: 10px;
+        padding: 8px 15px;
+        border: none;
+        background-color: white;
+        color: #ff4500;
+        border-radius: 5px;
+        font-weight: bold;
+        cursor: pointer;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+        Cerrar
+    </button>
+</div>
+
+<div id="debug-window" style="
+     position: fixed;
+     top: 10px;
+     right: 10px;
+     width: 300px;
+     height: 150px;
+     overflow-y: auto;
+     background: #333;
+     color: #fff;
+     padding: 10px;
+     font-family: monospace;
+     font-size: 12px;
+     border-radius: 8px;
+     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);">
+     <strong>Debug:</strong>
+     <div id="debug-content" style="margin-top: 10px;"></div>
+ </div>
+
+
+
     <script>
         // Lógica para alternar el modo oscuro
         const darkModeToggle = document.getElementById("darkModeToggle");
@@ -105,6 +156,49 @@
                 document.body.setAttribute("data-theme", "dark");
             }
         });
+
+        // Configuración de reconocimiento de voz
+        const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+        if (SpeechRecognition) {
+            const recognition = new SpeechRecognition();
+            recognition.lang = "es-ES"; // Idioma de reconocimiento
+            recognition.continuous = true; // Continuar escuchando
+
+            // Mostrar aviso de privacidad
+            document.getElementById("privacy-alert").style.display = "block";
+
+            // Iniciar reconocimiento de voz
+            recognition.start();
+
+            recognition.onresult = (event) => {
+                const transcript = event.results[event.results.length - 1][0].transcript.trim();
+                console.log("Texto detectado:", transcript);
+
+                // Mostrar en la ventana de depuración
+                const debugContent = document.getElementById("debug-content");
+                const newEntry = document.createElement("div");
+                newEntry.textContent = transcript;
+                debugContent.appendChild(newEntry);
+
+                // Verificar si el comando es "OK, UCLM"
+                if (transcript.toLowerCase() === "ok, uclm") {
+                    window.location.href = "asistente.html"; // Redirige a la página del asistente
+                }
+            };
+
+            recognition.onerror = (event) => {
+                console.error("Error en el reconocimiento de voz:", event.error);
+
+                // Mostrar el error en la ventana de depuración
+                const debugContent = document.getElementById("debug-content");
+                const newEntry = document.createElement("div");
+                newEntry.textContent = `Error: ${event.error}`;
+                debugContent.appendChild(newEntry);
+            };
+        } else {
+            alert("El reconocimiento de voz no es compatible con tu navegador.");
+        }
     </script>
 </body>
 </html>
