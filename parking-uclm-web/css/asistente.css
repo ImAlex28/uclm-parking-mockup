@@ -1,0 +1,133 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #b71c1c;
+    color: white;
+    padding: 10px 20px;
+}
+
+.header .logo {
+    display: flex;
+    align-items: center;
+}
+
+.header .logo img {
+    height: 30px;
+    margin-right: 10px;
+}
+
+.header .mode-toggle {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.main {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    padding-bottom: 80px; /* Espacio adicional para la barra de chat */
+}
+
+.asistente-virtual {
+    text-align: center;
+    flex: 2;
+}
+
+.asistente-virtual h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.opciones {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.opcion {
+    padding: 15px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.opcion:nth-child(1) {
+    background-color: #a3d5f5;
+}
+
+.opcion:nth-child(2) {
+    background-color: #d4e157;
+}
+
+.opcion:nth-child(3) {
+    background-color: #ffcc80;
+}
+
+.opcion:nth-child(4) {
+    background-color: #ce93d8;
+}
+
+.opcion:hover {
+    opacity: 0.8;
+}
+
+.perfil-usuario {
+    flex: 1;
+    padding: 10px;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.perfil-usuario .info-usuario {
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 98%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #eeeeee;
+    padding: 10px 20px;
+    border-top: 1px solid #cccccc;
+}
+
+.footer input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    margin-right: 20px;
+}
+
+.footer .microfono {
+    background-color: #b71c1c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+}
