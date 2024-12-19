@@ -126,7 +126,7 @@
 
 <div id="debug-window" style="
      position: fixed;
-     top: 10px;
+     bottom: 10px;
      right: 10px;
      width: 300px;
      height: 150px;
@@ -181,10 +181,13 @@
                 newEntry.textContent = transcript;
                 debugContent.appendChild(newEntry);
 
-                // Verificar si el comando es "OK, UCLM"
-                if (transcript.toLowerCase() === "ok, uclm") {
-                    window.location.href = "asistente.html"; // Redirige a la página del asistente
-                }
+                // Coincidencia flexible para detectar "OK, UCLM"
+                const command = transcript.toLowerCase();
+                const possibleMatches = ["ok, uclm", "ok uclm", "ok usted eleme", "ok usted lm", "ok uc eleme", "ok uslm", "ok, uclm.", "ok uclm.", "ok usted eleme.", "ok usted lm.", "ok uc eleme.", "ok uslm."];
+
+                 if (possibleMatches.some(match => command.includes(match))) {
+                     window.location.href = "asistente.html"; // Redirige a la página del asistente
+                 }
             };
 
             recognition.onerror = (event) => {
